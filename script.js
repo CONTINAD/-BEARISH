@@ -2,9 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nav scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        navbar.style.borderBottomColor = window.scrollY > 50
-            ? 'rgba(255,255,255,0.08)'
-            : 'rgba(255,255,255,0.06)';
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
     // Mobile menu
