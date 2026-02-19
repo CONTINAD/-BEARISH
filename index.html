@@ -22,8 +22,17 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#gallery">Gallery</a>
+            <a href="#chart">Chart</a>
             <a href="#buy">Buy</a>
-            <a href="#" class="nav-btn" id="buyBtn">Buy on Raydium</a>
+            <a href="#" class="nav-btn nav-btn-pump" id="buyBtn">
+                <svg class="pump-icon" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" />
+                    <path d="M8 16V8h4a3 3 0 0 1 0 6H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                Buy on Pump.fun
+            </a>
         </div>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -34,8 +43,9 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
+        <a href="#chart">Chart</a>
         <a href="#buy">Buy</a>
-        <a href="#" class="nav-btn">Buy on Raydium</a>
+        <a href="#" class="nav-btn">Buy on Pump.fun</a>
     </div>
 
     <!-- Hero -->
@@ -48,8 +58,16 @@
             <h1 class="hero-title">$BEARISH</h1>
             <p class="hero-subtitle">we ain't bearish. we never were.</p>
             <div class="hero-buttons">
-                <a href="#buy" class="btn btn-primary">Buy $BEARISH</a>
-                <a href="#about" class="btn btn-ghost">Learn More</a>
+                <a href="#" class="btn btn-pump" id="heroPumpBtn">
+                    <svg class="pump-icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 16V8h4a3 3 0 0 1 0 6H8" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Buy on Pump.fun
+                </a>
+                <a href="#chart" class="btn btn-ghost">View Chart</a>
             </div>
             <div class="hero-ca">
                 <span class="ca-label">CA</span>
@@ -121,6 +139,42 @@
         </div>
     </section>
 
+    <!-- DexScreener Chart -->
+    <section class="chart-section" id="chart">
+        <div class="container">
+            <h2>live chart</h2>
+            <div class="chart-wrapper" id="chartWrapper">
+                <div class="chart-placeholder" id="chartPlaceholder">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 13l4-4 4 4 4-8 6 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 20h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <p>chart will appear once the CA is live</p>
+                </div>
+                <!-- DexScreener embed will be injected here by JS when CA is set -->
+            </div>
+            <div class="chart-links">
+                <a href="#" class="chart-link" id="dexScreenerLink" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 13l4-4 4 4 4-8 6 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M3 20h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    DexScreener
+                </a>
+                <a href="#" class="chart-link" id="pumpFunLink" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 16V8h4a3 3 0 0 1 0 6H8" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Pump.fun
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- How to buy -->
     <section class="buy" id="buy">
         <div class="container">
@@ -144,7 +198,7 @@
                     <div class="step-num">3</div>
                     <div>
                         <h3>swap</h3>
-                        <p>go to Raydium or Jupiter, paste the CA, swap SOL for $BEARISH.</p>
+                        <p>go to Pump.fun, paste the CA, swap SOL for $BEARISH.</p>
                     </div>
                 </div>
             </div>
@@ -159,6 +213,8 @@
                 <div class="footer-links">
                     <a href="#" aria-label="X">X</a>
                     <a href="#" aria-label="Telegram">TG</a>
+                    <a href="#" aria-label="Pump.fun" id="footerPump">Pump</a>
+                    <a href="#" aria-label="DexScreener" id="footerDex">Dex</a>
                 </div>
             </div>
             <p class="disclaimer">$BEARISH is a memecoin with no intrinsic value. not financial advice. DYOR.</p>

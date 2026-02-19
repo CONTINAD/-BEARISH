@@ -36,6 +36,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Pump.fun & DexScreener links
+    const CA = caAddress.textContent.trim();
+    const isLive = CA && CA !== 'TBA';
+
+    const pumpBaseUrl = 'https://pump.fun/coin/';
+    const dexBaseUrl = 'https://dexscreener.com/solana/';
+
+    // Set Pump.fun links
+    const pumpUrl = isLive ? pumpBaseUrl + CA : '#';
+    document.querySelectorAll('#buyBtn, #heroPumpBtn, #footerPump').forEach(el => {
+        if (el) el.href = pumpUrl;
+    });
+    // Mobile nav pump button
+    document.querySelectorAll('.mobile-menu .nav-btn').forEach(el => {
+        el.href = pumpUrl;
+    });
+
+    // Set DexScreener links
+    const dexUrl = isLive ? dexBaseUrl + CA : '#';
+    const dexLink = document.getElementById('dexScreenerLink');
+    const pumpLink = document.getElementById('pumpFunLink');
+    const footerDex = document.getElementById('footerDex');
+    if (dexLink) dexLink.href = dexUrl;
+    if (pumpLink) pumpLink.href = pumpUrl;
+    if (footerDex) footerDex.href = dexUrl;
+
+    // DexScreener chart embed
+    if (isLive) {
+        const chartWrapper = document.getElementById('chartWrapper');
+        const placeholder = document.getElementById('chartPlaceholder');
+        if (chartWrapper && placeholder) {
+            placeholder.remove();
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://dexscreener.com/solana/${CA}?embed=1&theme=light&info=0`;
+            iframe.title = 'DexScreener Chart';
+            iframe.loading = 'lazy';
+            chartWrapper.appendChild(iframe);
+        }
+    }
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -46,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.about-grid, .gallery-item, .step, h2').forEach(el => {
+    document.querySelectorAll('.about-grid, .gallery-item, .step, .chart-wrapper, .chart-links, h2').forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
