@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (chartWrapper && placeholder) {
             placeholder.remove();
             const iframe = document.createElement('iframe');
-            iframe.src = `https://dexscreener.com/solana/${CA}?embed=1&theme=light&info=0`;
+            iframe.src = `https://dexscreener.com/solana/${CA}?embed=1&theme=light&trades=0&info=0`;
             iframe.title = 'DexScreener Chart';
             iframe.loading = 'lazy';
             chartWrapper.appendChild(iframe);
